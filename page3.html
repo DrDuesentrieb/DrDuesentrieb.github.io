@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May I Ask You Out - Page 3</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function handleYesChange() {
+            const yesCheckbox = document.getElementById('yes-checkbox');
+            const noCheckbox = document.getElementById('no-checkbox');
+            const confirmText = document.getElementById('confirm-text');
+            const noOptionsContainer = document.getElementById('no-options-container');
+            
+            if (yesCheckbox.checked) {
+                confirmText.style.display = 'block';
+                noCheckbox.checked = false;
+                noOptionsContainer.style.display = 'none';
+            } else {
+                confirmText.style.display = 'none';
+            }
+        }
+
+        function handleNoChange() {
+            const yesCheckbox = document.getElementById('yes-checkbox');
+            const noCheckbox = document.getElementById('no-checkbox');
+            const noOptionsContainer = document.getElementById('no-options-container');
+            const confirmText = document.getElementById('confirm-text');
+            
+            if (noCheckbox.checked) {
+                yesCheckbox.checked = false;
+                confirmText.style.display = 'none';
+                noOptionsContainer.style.display = 'block';
+            } else {
+                noOptionsContainer.style.display = 'none';
+            }
+        }
+
+        function handleLiarChange() {
+            const liarCheckbox = document.getElementById('liar-checkbox');
+            const stillNoCheckbox = document.getElementById('still-no-checkbox');
+            const confirmText = document.getElementById('confirm-text');
+            
+            if (liarCheckbox.checked) {
+                stillNoCheckbox.checked = false;
+                confirmText.style.display = 'block';
+            } else {
+                confirmText.style.display = 'none';
+            }
+        }
+
+        function handleStillNoChange() {
+            const stillNoCheckbox = document.getElementById('still-no-checkbox');
+            const liarCheckbox = document.getElementById('liar-checkbox');
+            const formContainer = document.getElementById('form-container');
+            const confirmText = document.getElementById('confirm-text');
+            
+            if (stillNoCheckbox.checked) {
+                liarCheckbox.checked = false;
+                confirmText.style.display = 'none';
+                formContainer.style.display = 'block';
+            } else {
+                formContainer.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body class="page3">
+    <div class="main-text">Do you want to go on a date with me Nia?</div>
+    
+    <div class="checkbox-container">
+        <label class="checkbox-label">
+            <input type="checkbox" id="yes-checkbox" onchange="handleYesChange()">
+            Yes
+        </label>
+        
+        <label class="checkbox-label">
+            <input type="checkbox" id="no-checkbox" onchange="handleNoChange()">
+            No
+        </label>
+    </div>
+    
+    <div id="confirm-text" class="confirm-text">Please contact TS04D to confirm and discuss appointment details.</div>
+    
+    <div id="no-options-container" class="no-options-container">
+        <label class="checkbox-label">
+            <input type="checkbox" id="liar-checkbox" onchange="handleLiarChange()">
+            Liar, yes you want
+        </label>
+        
+        <label class="checkbox-label">
+            <input type="checkbox" id="still-no-checkbox" onchange="handleStillNoChange()">
+            still no
+        </label>
+    </div>
+    
+    <div id="form-container" class="feedback-text-container">
+        <p>If it is of convenience to you, we happily take your feedback on why our services don't spark your interest. Please send feedback with ticket issue code "TS04D" to +49 1577 7058598</p>
+    </div>
+</body>
+</html>
